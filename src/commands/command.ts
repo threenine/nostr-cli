@@ -1,5 +1,5 @@
-export const Command = {
-    hello: 'hello',
+export const command = {
+    profile: 'profile',
     DOWNLOAD: 'download',
     LIST: 'list',
 } as const;

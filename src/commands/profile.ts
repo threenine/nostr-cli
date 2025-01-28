@@ -1,12 +1,13 @@
-import { CommandModule } from 'yargs';
+import {CommandModule} from 'yargs';
 import {command} from "./command";
+import {NdkService} from "../services/NdkService";
 
-const helloCommand: CommandModule = {
-    command: command.hello,
+const profileCommand: CommandModule = {
+    command: command.profile,
     describe: 'Greet a user',
     builder: {
-        name: {
-            describe: 'Name of the user',
+        npub: {
+            describe: 'npub of the user',
             demandOption: true,
             type: 'string',
         },
@@ -17,12 +18,23 @@ const helloCommand: CommandModule = {
         },
     },
     handler: async (argv) => {
-        if (argv.age) {
-            console.log(`${command.hello}, ${argv.name}! You are ${argv.age} years old.`);
-        } else {
-            console.log(`Hello, ${argv.name}!`);
+        if (argv.npub) {
+            console.log("npub: ", argv.npub)
+            await getByPubkey(argv.npub.toString())
         }
     },
 };
 
-export default helloCommand;
+async function getByPubkey(npub: string): Promise<void> {
+    let ndk = await NdkService.getInstance().getNDK()
+
+
+    const user = ndk.getUser({ npub: npub as string});
+
+    await user.fetchProfile()
+    console.log(user.profile)
+    process.exit(0);
+
+}
+
+export default profileCommand;

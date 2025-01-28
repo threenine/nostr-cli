@@ -1,0 +1,38 @@
+{
+  "name": "nostr-cli",
+  "version": "1.0.0",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/threenine/nostr-cli.git"
+  },
+  "bin": {
+    "nostr-cli": "dist/app.js"
+  },
+  "keywords": [
+    "nostr"
+  ],
+  "author": "threenine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/threenine/nostr-cli/issues"
+  },
+  "homepage": "https://github.com/threenine/nostr-cli#readme",
+  "description": "",
+  "dependencies": {
+    "@nostr-dev-kit/ndk": "2.10.7",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.8.0",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.10",
+    "@types/yargs": "^17.0.13",
+    "just-install": "^2.0.2",
+    "typescript": "^5.7.3"
+  }
+}
