@@ -1,7 +1,7 @@
 
 
 local-build:
-  npm run build
+  pnpm run build
   chmod +x dist/app.js
 
 test-version: local-build
