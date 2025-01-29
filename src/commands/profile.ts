@@ -4,6 +4,7 @@ import {NdkService} from "../services/NdkService";
 import {promises as fs} from 'fs'
 import {NDKUserProfile} from "@nostr-dev-kit/ndk";
 import * as process from "node:process";
+import chalk from "chalk";
 
 const profileCommand: CommandModule = {
     command: command.profile,
@@ -28,9 +29,9 @@ const profileCommand: CommandModule = {
             if (argv.output && profile !== undefined) {
                 let result = await writeToFile(argv.npub.toString(), profile)
                 if(result.success) {
-                    console.log(`output to file: ${result.fileName}`)
+                    console.log(chalk.green(`output to file: ${result.fileName}`))
                 } else {
-                    console.log(`Failed to write profile to ${result.fileName}`)
+                    console.log(chalk.red(`Failed to write profile to ${result.fileName}`))
                     process.exit(7)
                 }
             }
