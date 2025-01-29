@@ -10,11 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Configure Git user
-        run: |
-          git config user.name "threenine"
-          git config user.email "admin@threenine.co.uk" 
-
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
@@ -33,7 +28,10 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
+      - name: Set up Git user
+        run: |
+            git config --global user.email "admin@threenineco.uk"
+            git config --global user.name "threenine"
       - name: Release
         run: pnpm standard-version
         env:
