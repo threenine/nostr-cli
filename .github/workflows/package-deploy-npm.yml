@@ -8,7 +8,13 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Configure Git user
+        run: |
+          git config user.name "threenine"
+          git config user.email "admin@threenine.co.uk" 
+
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
