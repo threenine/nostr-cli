@@ -8,7 +8,7 @@ import chalk from "chalk";
 
 const profileCommand: CommandModule = {
     command: command.profile,
-    describe: 'Greet a user',
+    describe: 'Get the profile of a user',
     builder: {
         npub: {
             describe: 'npub of the user',

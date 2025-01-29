@@ -1,5 +1,4 @@
 export const command = {
     profile: 'profile',
-    DOWNLOAD: 'download',
-    LIST: 'list',
+    keys: 'keys',
 } as const;
