@@ -14,4 +14,5 @@ yargs(hideBin(process.argv))
     .command(profileCommand)
     .demandCommand(1, 'You need at least one command before moving on')
     .help()
+    .version()
     .argv;
