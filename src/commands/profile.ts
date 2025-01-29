@@ -16,7 +16,7 @@ const profileCommand: CommandModule = {
             type: 'string',
         },
         output: {
-            describe: 'should write to file',
+            describe: 'write output to file in your current directory',
             demandOption: false,
             type: 'boolean',
             default: false
@@ -41,7 +41,6 @@ const profileCommand: CommandModule = {
 };
 
 async function writeToFile(npub: string, profile: NDKUserProfile): Promise<{ success: Boolean, fileName: string }> {
-
     let outputFilePath = `./${npub}.json`;
     await fs.writeFile(outputFilePath, JSON.stringify(profile, null, 2), 'utf-8');
     return {success: true, fileName: outputFilePath}
