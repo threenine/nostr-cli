@@ -16,7 +16,11 @@
   "keywords": [
     "nostr"
   ],
-  "author": "threenine",
+  "author": {
+    "name": "threenine",
+    "email": "admin@threenine.co.uk",
+    "url": "https://threenine.co.uk"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/threenine/nostr-cli/issues"
