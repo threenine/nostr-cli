@@ -32,6 +32,11 @@ jobs:
         run: |
             git config --global user.email "admin@threenineco.uk"
             git config --global user.name "threenine"
+      - name: Check npm login
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Release
         run: pnpm standard-version
         env:
