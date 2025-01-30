@@ -43,6 +43,7 @@ jobs:
         run: pnpm run build
 
       - name: Publish to NPM
-        run: pnpm publish --access public
+        run: |
+          git push --follow-tags origin main && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
