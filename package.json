@@ -1,17 +1,17 @@
 {
-  "name": "nostr-cli",
+  "name": "@threenine/nostr-cli",
   "version": "0.1.0",
-  "main": "dist/app.js",
+  "main": "bin/app.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/app.js"
+    "start": "node bin/app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/threenine/nostr-cli.git"
   },
   "bin": {
-    "nostr-cli": "dist/app.js"
+    "nostr-cli": "bin/app.js"
   },
   "keywords": [
     "nostr"
